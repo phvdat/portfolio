@@ -5,7 +5,7 @@ export const root = css`
     --height-header: 90px;
     --height-header-mobile: 70px;
     --width-sidebar: 305px;
-    --container-area-default-layout: 1903px;
+    --container-area-default-layout: 1320px;
   }
 `;
 

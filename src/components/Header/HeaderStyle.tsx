@@ -9,8 +9,9 @@ export const headerStyle = {
       height: 'var(--height-header)',
       backdropFilter: 'blur(15px)',
       boxShadow: 'var(--box-shadow-header)',
-      position: 'sticky',
+      position: 'fixed',
       padding: `0 ${spacing?.[9]}`,
+      margin: 'auto',
       backgroundColor: 'var(--background-primary)',
       [media('md')]: {
         height: 'var(--height-header-mobile)',
@@ -20,7 +21,6 @@ export const headerStyle = {
 
   wrapper: css({
     height: '100%',
-    maxWidth: 'var(--container-area-default-layout)',
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center'

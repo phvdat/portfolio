@@ -5,34 +5,12 @@ import { headerStyle } from './HeaderStyle';
 import Avatar from 'components/BaseUI/Avatar/Avatar';
 import AVATAR from 'assets/imgs/avatar.jpg';
 import DarkModeButton from 'components/BaseUI/DarkModeButton/DarkModeButton';
-import { RoutePath } from 'constants/routes';
 import { AiOutlineMenu } from 'react-icons/ai';
-import { ICON_SIZE } from 'constants/common';
+import { ICON_SIZE, MENU } from 'constants/common';
 
 // const NAME = 'Pham Van Dat';
 const NAME = '';
-const MENU = [
-  {
-    label: 'HOME',
-    url: RoutePath.Home
-  },
-  {
-    label: 'FEATURES',
-    url: RoutePath.Features
-  },
-  {
-    label: 'RESUME',
-    url: RoutePath.Resume
-  },
-  {
-    label: 'BLOG',
-    url: RoutePath.Blog
-  },
-  {
-    label: 'CONTACTS',
-    url: RoutePath.Contact
-  }
-];
+
 const Header = () => {
   return (
     <>
@@ -40,15 +18,17 @@ const Header = () => {
         <div css={headerStyle.wrapper}>
           <Avatar image={AVATAR} name={NAME} />
           <div css={headerStyle.container}>
-            <div css={headerStyle.menu}>
-              {MENU.map((item) => {
+            <ul css={headerStyle.menu}>
+              {MENU.map((item, index) => {
                 return (
-                  <NavLink to={item.url} css={headerStyle.item}>
-                    <span>{item.label}</span>
-                  </NavLink>
+                  <li key={index}>
+                    <NavLink to={item.url} css={headerStyle.item}>
+                      <span>{item.label}</span>
+                    </NavLink>
+                  </li>
                 );
               })}
-            </div>
+            </ul>
             <DarkModeButton />
             <div css={headerStyle.menuIcon}>
               <AiOutlineMenu size={ICON_SIZE.sm} />
