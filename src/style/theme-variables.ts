@@ -12,8 +12,7 @@ export const root = css`
 export const themeLight = css`
   body[data-theme='light'] {
     --background-primary: #ecf0f3;
-    --background-secondary: rgb(244, 236, 228, 0.3);
-    --background-third: #e7e7e7;
+    --background-secondary: #eff2f4;
     --background-gradient: linear-gradient(
       145deg,
       rgb(226, 232, 236),
@@ -35,8 +34,7 @@ export const themeLight = css`
 export const themeDark = css`
   body[data-theme='dark'] {
     --background-primary: #202428;
-    --background-secondary: #22303c;
-    --background-third: #262626;
+    --background-secondary: #191b1e;
     --background-gradient: linear-gradient(
       145deg,
       rgb(25, 28, 31),
@@ -65,6 +63,9 @@ export const theme = {
     info: '#2196F3',
     red: {
       100: '#e82650'
+    },
+    dark: {
+      100: '#171717'
     }
   },
   spacing: {
@@ -101,12 +102,8 @@ export const theme = {
     tertiary: 700
   },
   zIndex: {
-    fab: 1050,
-    drawer: 1200,
-    dialog: 1300,
-    tooltip: 1500,
-    snackbar: 1400,
-    backdrop: 1199
+    header: 100,
+    backdrop: 120
   },
 
   borderRadius: {

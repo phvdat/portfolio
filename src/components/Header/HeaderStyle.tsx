@@ -33,11 +33,13 @@ export const headerStyle = {
       alignItems: 'center'
     }),
 
-  menu: css({
-    [media('md')]: {
-      display: 'none'
-    }
-  }),
+  menu: ({ spacing }: Theme) =>
+    css({
+      display: 'flex',
+      [media('md')]: {
+        display: 'none'
+      }
+    }),
   item: ({ fontSize, spacing, fontWeight, colors }: Theme) =>
     css({
       marginLeft: spacing?.[10],
@@ -57,15 +59,7 @@ export const headerStyle = {
     }),
   menuIcon: ({ colors, spacing, borderRadius }: Theme) =>
     css({
-      cursor: 'pointer',
-      color: colors?.red[100],
-      width: spacing?.[10],
-      height: spacing?.[10],
-      borderRadius: borderRadius?.full,
-      backgroundImage: 'var(--background-gradient)',
       display: 'none',
-      alignItems: 'center',
-      justifyContent: 'center',
       [media('md')]: {
         display: 'flex'
       }

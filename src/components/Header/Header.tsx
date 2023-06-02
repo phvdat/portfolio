@@ -7,11 +7,14 @@ import AVATAR from 'assets/imgs/avatar.jpg';
 import DarkModeButton from 'components/BaseUI/DarkModeButton/DarkModeButton';
 import { AiOutlineMenu } from 'react-icons/ai';
 import { ICON_SIZE, MENU } from 'constants/common';
+import { circleButtonStyle } from 'style/common';
 
 // const NAME = 'Pham Van Dat';
 const NAME = '';
-
-const Header = () => {
+interface HeaderProps {
+  setShowSidebar: (showSidebar: boolean) => void;
+}
+const Header = ({ setShowSidebar }: HeaderProps) => {
   return (
     <>
       <header css={headerStyle.self}>
@@ -30,7 +33,10 @@ const Header = () => {
               })}
             </ul>
             <DarkModeButton />
-            <div css={headerStyle.menuIcon}>
+            <div
+              css={[circleButtonStyle, headerStyle.menuIcon]}
+              onClick={() => setShowSidebar(true)}
+            >
               <AiOutlineMenu size={ICON_SIZE.sm} />
             </div>
           </div>
