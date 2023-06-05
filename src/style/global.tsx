@@ -1,9 +1,9 @@
-import { css, Global } from '@emotion/react';
-import { root, themeDark, themeLight } from './theme-variables';
+import { css, Global } from "@emotion/react";
+import { root, themeDark, themeLight } from "./theme-variables";
 
 const reset = css`
   * {
-    font-family: Roboto, sans-serif;
+    font-family: Montserrat, sans-serif;
     box-sizing: inherit;
   }
 
@@ -24,7 +24,7 @@ const reset = css`
     box-sizing: border-box;
     background-color: var(--background-primary);
     color: var(--text-primary);
-    transaction: 'all 1s ease-out';
+    transaction: "all 1s ease-out";
     touch-action: manipulation;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
