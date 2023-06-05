@@ -21,6 +21,7 @@ export const themeLight = css`
 
     --text-primary: #3c3e41;
     --text-secondary: #000000;
+    --text-tertiary: rgb(60, 62, 65)
 
     --box-shadow-header: 10px 10px 19px rgba(0, 0, 0, 0.1);
     --box-shadow-sm: 4px 4px 10px rgba(0, 0, 0, 0.04);
@@ -28,6 +29,7 @@ export const themeLight = css`
     --box-shadow-lg: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.1));
 
     --border-color: #cad0d5;
+		--horizontal: #dde1e4;
   }
 `;
 
@@ -43,6 +45,7 @@ export const themeDark = css`
 
     --text-primary: #c6cfdd;
     --text-secondary: #ffffff;
+    --text-tertiary: rgb(135, 142, 153);
 
     --box-shadow-header: 10px 10px 19px #1c1e22, -10px -10px 19px #262a2e;
     --box-shadow-sm: 4px 4px 10px rgba(255, 255, 255, 0.04);
@@ -50,6 +53,7 @@ export const themeDark = css`
     --box-shadow-lg: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.1));
 
     --border-color: #2e3337;
+    --horizontal: #303235;
   }
 `;
 

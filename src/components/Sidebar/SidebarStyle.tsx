@@ -42,13 +42,46 @@ export const sidebarStyle = {
         transform: 'translateX(0px)'
       }
     }),
-  header: ({ spacing }: Theme) => css({}),
+
   avatarContainer: css({
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center'
   }),
-  menu: ({ spacing }: Theme) => css({}),
-  footer: ({ spacing }: Theme) => css({}),
-  item: css({})
+
+  description: ({ spacing, fontSize }: Theme) =>
+    css({
+      color: 'var(--text-tertiary)',
+      marginTop: spacing?.[7],
+      marginBottom: spacing?.[7],
+      fontSize: fontSize?.sm
+    }),
+
+  menu: ({ spacing, fontSize, fontWeight }: Theme) =>
+    css({
+      marginTop: spacing?.[7],
+      marginBottom: spacing?.[7],
+      li: {
+        fontSize: fontSize?.xs,
+        fontWeight: fontWeight?.secondary,
+        marginTop: spacing?.[7],
+        ':first-of-type': {
+          marginTop: 0
+        }
+      }
+    }),
+
+  footer: ({ spacing, fontSize, fontWeight }: Theme) =>
+    css({
+      marginTop: spacing?.[7],
+      '> span': {
+        fontSize: fontSize?.xs,
+        fontWeight: fontWeight?.secondary,
+        marginBottom: spacing?.[7]
+      }
+    }),
+  socialList: css({
+    display: 'flex',
+    justifyContent: 'space-around'
+  })
 };
