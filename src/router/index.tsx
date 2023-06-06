@@ -1,8 +1,8 @@
-import { RouteObject } from "react-router-dom";
-import App from "../App";
-import DefaultLayout from "../components/layout/DefaultLayout/DefaultLayout";
-import { RoutePath } from "../constants/routes";
-import HomePage from "../page/home";
+import { RouteObject } from 'react-router-dom';
+import App from '../App';
+import DefaultLayout from '../components/layout/DefaultLayout/DefaultLayout';
+import { RoutePath } from '../constants/routes';
+import IndexPage from 'page';
 
 const routesConfig: RouteObject[] = [
   {
@@ -14,33 +14,12 @@ const routesConfig: RouteObject[] = [
         children: [
           {
             path: RoutePath.Index,
-            element: <HomePage />,
-          },
-          {
-            path: RoutePath.Home,
-            element: <HomePage />,
-          },
-          {
-            path: RoutePath.Features,
-            element: <HomePage />,
-          },
-          {
-            path: RoutePath.Resume,
-            element: <HomePage />,
-          },
-
-          {
-            path: RoutePath.Blog,
-            element: <HomePage />,
-          },
-          {
-            path: RoutePath.Contact,
-            element: <HomePage />,
-          },
-        ],
-      },
-    ],
-  },
+            element: <IndexPage />
+          }
+        ]
+      }
+    ]
+  }
 ];
 
 export default routesConfig;

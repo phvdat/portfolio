@@ -16,6 +16,7 @@ export const homePageStyle = {
   self: ({ spacing }: Theme) =>
     css({
       paddingTop: spacing?.[7],
+      paddingBottom: spacing?.[8],
       display: 'flex',
       justifyContent: 'space-between',
       minHeight: 'calc(100vh - var(--height-header))',

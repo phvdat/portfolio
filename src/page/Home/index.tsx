@@ -6,15 +6,10 @@ import { useState } from 'react';
 import { FindWithMe } from 'components/Sidebar/Sidebar';
 import { sidebarStyle } from 'components/Sidebar/SidebarStyle';
 import { squareButtonStyle } from 'style/common';
-import { Link } from 'react-router-dom';
 import { AiFillHtml5 } from 'react-icons/ai';
 import { IoLogoCss3, IoLogoJavascript } from 'react-icons/io';
 import { FaReact } from 'react-icons/fa';
-const TEXT_DEFINE = [
-  'Frontend Developer.',
-  'Professional Coder.',
-  'Vietnamese.'
-];
+const TEXT_DEFINE = ['Frontend Developer.', 'Professional Coder.'];
 
 const HomePage = () => {
   const [textIndex, setTextIndex] = useState<number>(1);
