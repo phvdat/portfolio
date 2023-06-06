@@ -12,6 +12,7 @@ declare module '@emotion/react' {
     info: string;
     red: Model<string>;
     dark: Model<string>;
+    gray: Model<string>;
   }
   export interface Theme {
     container: string;

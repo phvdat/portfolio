@@ -1,4 +1,4 @@
-import { css, Theme } from "@emotion/react";
+import { css, Theme } from '@emotion/react';
 
 export const root = css`
   :root {
@@ -10,7 +10,7 @@ export const root = css`
 `;
 
 export const themeLight = css`
-  body[data-theme="light"] {
+  body[data-theme='light'] {
     --background-primary: #ecf0f3;
     --background-secondary: #eff2f4;
     --background-gradient: linear-gradient(
@@ -33,7 +33,7 @@ export const themeLight = css`
 `;
 
 export const themeDark = css`
-  body[data-theme="dark"] {
+  body[data-theme='dark'] {
     --background-primary: #212428;
     --background-secondary: #191b1e;
     --background-gradient: linear-gradient(
@@ -56,67 +56,70 @@ export const themeDark = css`
 `;
 
 export const theme = {
-  container: "1280px",
+  container: '1280px',
   colors: {
-    primary: "#FACC15",
-    success: "#22C55E",
-    warning: "#FF9800",
-    danger: "#EF4444",
-    info: "#2196F3",
+    primary: '#FACC15',
+    success: '#22C55E',
+    warning: '#FF9800',
+    danger: '#EF4444',
+    info: '#2196F3',
     red: {
-      100: "#e82650",
+      100: '#e82650'
     },
     dark: {
-      100: "#171717",
+      100: '#171717'
     },
+    gray: {
+      100: '#646669'
+    }
   },
   spacing: {
-    1: "2px",
-    2: "4px",
-    3: "8px",
-    4: "12px",
-    5: "16px",
-    6: "20px",
-    7: "24px",
-    8: "32px",
-    9: "36px",
-    10: "48px",
-    11: "64px",
-    12: "80px",
-    13: "160px",
-    14: "200px",
+    1: '2px',
+    2: '4px',
+    3: '8px',
+    4: '12px',
+    5: '16px',
+    6: '20px',
+    7: '24px',
+    8: '32px',
+    9: '36px',
+    10: '48px',
+    11: '64px',
+    12: '80px',
+    13: '160px',
+    14: '200px'
   },
   fontFamily: {
-    primary: "Roboto, sans-serif",
-    secondary: "Tahoma",
+    primary: 'Roboto, sans-serif',
+    secondary: 'Tahoma'
   },
   fontSize: {
-    xs: "1.4rem",
-    sm: "1.6rem",
-    md: "2rem",
-    lg: "2.4rem",
-    xl: "3.6rem",
-    xxl: "4.8rem",
-    xxxl: "6rem",
+    xs: '1.4rem',
+    sm: '1.6rem',
+    md: '2rem',
+    lg: '2.4rem',
+    xl: '3.6rem',
+    xxl: '4.8rem',
+    xxxl: '6rem'
   },
   fontWeight: {
     primary: 400,
     secondary: 500,
-    tertiary: 700,
+    tertiary: 700
   },
   zIndex: {
     header: 100,
-    backdrop: 120,
+    backdrop: 120
   },
 
   borderRadius: {
-    sm: "4px",
-    md: "8px",
-    full: "50%",
+    sm: '4px',
+    md: '8px',
+    full: '50%'
   },
 
   boxShadow: {
-    sm: "4px 4px 10px rgba(0, 0, 0, 0.04)",
-    md: "0px 0px 8px rgba(0, 0, 0, 0.08)",
-  },
+    sm: '4px 4px 10px rgba(0, 0, 0, 0.04)',
+    md: '0px 0px 8px rgba(0, 0, 0, 0.08)'
+  }
 } as Theme;
