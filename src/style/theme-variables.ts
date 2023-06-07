@@ -26,6 +26,7 @@ export const themeLight = css`
 
     --box-shadow-header: 10px 10px 19px rgba(0, 0, 0, 0.1);
     --box-shadow-md: 0px 0px 18px rgba(0, 0, 0, 0.3);
+    --box-shadow-lg: 5px 5px 15px #d1d9e6, -5px -5px 15px #ffffff;
 
     --border-color: #cad0d5;
     --horizontal: #dde1e4;
@@ -49,6 +50,7 @@ export const themeDark = css`
 
     --box-shadow-header: 10px 10px 19px #1c1e22, -10px -10px 19px #262a2e;
     --box-shadow-md: 0px 0px 18px rgba(136, 140, 143, 0.3);
+    --box-shadow-lg: 10px 10px 19px #1c1e22, -10px -10px 19px #262a2e;
 
     --border-color: #2e3337;
     --horizontal: #303235;

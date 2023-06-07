@@ -1,18 +1,27 @@
 /** @jsxImportSource @emotion/react */
 
 import { horizontalLine } from 'style/common';
-import HomePage from './home';
-import FeaturesPage from './features';
+import Home from './home';
+import Features from './features';
+import { useCallback } from 'react';
+import aos from 'aos';
+import Resume from './resume';
 
 const IndexPage = () => {
+  useCallback(() => {
+    aos.init();
+  }, []);
   return (
     <>
       <section>
-        <HomePage />
+        <Home />
         <div css={horizontalLine}></div>
       </section>
       <section>
-        <FeaturesPage />
+        <Features />
+      </section>
+      <section>
+        <Resume />
       </section>
     </>
   );

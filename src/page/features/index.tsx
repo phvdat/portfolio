@@ -1,13 +1,13 @@
 /** @jsxImportSource @emotion/react */
 
-import { featurePageStyle } from './indexStyle';
+import { featureStyle } from './indexStyle';
 
-const FeaturesPage = () => {
+const Feature = () => {
   return (
-    <div css={featurePageStyle.self}>
-      <span css={featurePageStyle.title}>WELCOME TO MY WORLD</span>
+    <div css={featureStyle.self}>
+      <span css={featureStyle.title}>WELCOME TO MY WORLD</span>
     </div>
   );
 };
 
-export default FeaturesPage;
+export default Feature;

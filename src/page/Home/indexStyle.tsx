@@ -12,7 +12,7 @@ const typing = keyframes`
 
 `;
 
-export const homePageStyle = {
+export const homeStyle = {
   self: ({ spacing }: Theme) =>
     css({
       paddingTop: spacing?.[7],

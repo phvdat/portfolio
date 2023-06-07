@@ -1,6 +1,6 @@
 import { Theme, css } from '@emotion/react';
 
-export const featurePageStyle = {
+export const featureStyle = {
   self: ({ spacing }: Theme) =>
     css({
       paddingTop: spacing?.[7],
