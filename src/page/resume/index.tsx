@@ -1,7 +1,9 @@
 /** @jsxImportSource @emotion/react */
 
 import { useState } from 'react';
-import { resumeStyle } from './indexStyle';
+import { cardStyle, resumeStyle } from './indexStyle';
+import { horizontalLine } from 'style/common';
+import { EducationType } from 'constants/resume';
 
 enum Tab {
   Education = 1,
@@ -23,6 +25,17 @@ const tab = [
   }
 ];
 
+const Card = (props: EducationType) => {
+  const { title, subTitle, content } = props;
+  return (
+    <div css={cardStyle.self}>
+      <h2>{title}</h2>
+      <span>{subTitle}</span>
+      <div css={horizontalLine}></div>
+      <p>{content}</p>
+    </div>
+  );
+};
 const Resume = () => {
   const [activeTab, setActiveTab] = useState<Tab>(Tab.Education);
   return (

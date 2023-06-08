@@ -19,6 +19,7 @@ export const themeLight = css`
       rgb(255, 255, 255)
     );
     --background-header: rgba(236, 240, 243, 0.9);
+    --background-linear: linear-gradient(145deg, #e2e8ec, #F6F2F6);
 
     --text-primary: #3c3e41;
     --text-secondary: #000000;
@@ -43,6 +44,7 @@ export const themeDark = css`
       rgb(30, 34, 38)
     );
     --background-header: rgba(33, 36, 40, 0.9);
+    --background-linear: linear-gradient(145deg, #1e2024, #23272b);
 
     --text-primary: #c6cfdd;
     --text-secondary: #ffffff;

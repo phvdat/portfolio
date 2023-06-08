@@ -18,16 +18,25 @@ export const resumeStyle = {
       borderRadius: borderRadius?.md,
       display: 'flex',
       boxShadow: 'var(--box-shadow-lg)',
+      background: 'var(--background-linear)',
       '> li': {
         flex: 1,
         paddingTop: spacing?.[9],
         paddingBottom: spacing?.[9],
         textAlign: 'center',
         cursor: 'pointer',
-        '&[data-active-tab="true"]': {
+        '&[data-active-tab="true"], :hover': {
           borderRadius: borderRadius?.md,
           boxShadow: 'var(--box-shadow-lg)'
         }
       }
+    })
+};
+
+export const cardStyle = {
+  self: ({ spacing }: Theme) =>
+    css({
+      paddingTop: spacing?.[7],
+      paddingBottom: spacing?.[8]
     })
 };
