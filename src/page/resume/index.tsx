@@ -1,9 +1,13 @@
 /** @jsxImportSource @emotion/react */
 
 import { useState } from 'react';
-import { cardStyle, resumeStyle } from './indexStyle';
+import { listCardStyle, resumeStyle } from './indexStyle';
 import { horizontalLine } from 'style/common';
-import { EducationType } from 'constants/resume';
+import { EDUCATION_LIST, EducationType } from 'constants/resume';
+
+interface ListCardProps {
+  data: EducationType[];
+}
 
 enum Tab {
   Education = 1,
@@ -28,12 +32,24 @@ const tab = [
 const Card = (props: EducationType) => {
   const { title, subTitle, content } = props;
   return (
-    <div css={cardStyle.self}>
+    <div css={listCardStyle.card}>
       <h2>{title}</h2>
       <span>{subTitle}</span>
       <div css={horizontalLine}></div>
       <p>{content}</p>
     </div>
+  );
+};
+
+const ListCard = ({ data }: ListCardProps) => {
+  return (
+    <ul css={listCardStyle.self}>
+      {data.map((item, index) => (
+        <li key={index}>
+          <Card {...item} />
+        </li>
+      ))}
+    </ul>
   );
 };
 const Resume = () => {
@@ -52,6 +68,10 @@ const Resume = () => {
           </li>
         ))}
       </ul>
+
+      <div css={resumeStyle.container}>
+        <ListCard data={EDUCATION_LIST} />
+      </div>
     </div>
   );
 };

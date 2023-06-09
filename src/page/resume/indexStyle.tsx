@@ -13,7 +13,7 @@ export const resumeStyle = {
       textAlign: 'center',
       marginBottom: spacing?.[11]
     }),
-  tab: ({ borderRadius, spacing }: Theme) =>
+  tab: ({ borderRadius, spacing, colors }: Theme) =>
     css({
       borderRadius: borderRadius?.md,
       display: 'flex',
@@ -25,16 +25,28 @@ export const resumeStyle = {
         paddingBottom: spacing?.[9],
         textAlign: 'center',
         cursor: 'pointer',
-        '&[data-active-tab="true"], :hover': {
+        '&[data-active-tab="true"]': {
+          borderRadius: borderRadius?.md,
+          boxShadow: 'var(--box-shadow-lg)',
+          color: colors?.red?.[100]
+        },
+        ':hover': {
           borderRadius: borderRadius?.md,
           boxShadow: 'var(--box-shadow-lg)'
         }
       }
-    })
+    }),
+  container: css({})
 };
 
-export const cardStyle = {
+export const listCardStyle = {
   self: ({ spacing }: Theme) =>
+    css({
+      paddingTop: spacing?.[7],
+      paddingBottom: spacing?.[8]
+    }),
+
+  card: ({ spacing }: Theme) =>
     css({
       paddingTop: spacing?.[7],
       paddingBottom: spacing?.[8]
