@@ -13,13 +13,14 @@ export const themeLight = css`
   body[data-theme='light'] {
     --background-primary: #ecf0f3;
     --background-secondary: #eff2f4;
+    --background-tertiary: #dadee2;
     --background-gradient: linear-gradient(
       145deg,
       rgb(226, 232, 236),
       rgb(255, 255, 255)
     );
     --background-header: rgba(236, 240, 243, 0.9);
-    --background-linear: linear-gradient(145deg, #e2e8ec, #F6F2F6);
+    --background-linear: linear-gradient(145deg, #e2e8ec, #f6f2f6);
 
     --text-primary: #3c3e41;
     --text-secondary: #000000;
@@ -38,6 +39,7 @@ export const themeDark = css`
   body[data-theme='dark'] {
     --background-primary: #212428;
     --background-secondary: #191b1e;
+    --background-tertiary: #17191c;
     --background-gradient: linear-gradient(
       145deg,
       rgb(25, 28, 31),

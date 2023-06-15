@@ -30,13 +30,20 @@ const tab = [
 ];
 
 const Card = (props: EducationType) => {
-  const { title, subTitle, content } = props;
+  const { title, subTitle, content, score } = props;
   return (
     <div css={listCardStyle.card}>
-      <h2>{title}</h2>
-      <span>{subTitle}</span>
+      <div css={listCardStyle.header}>
+        <div>
+          <h2 css={listCardStyle.titleCard}>{title}</h2>
+          <span css={listCardStyle.subTitle}>{subTitle}</span>
+        </div>
+        <div css={listCardStyle.score}>
+          <span>{score}</span>
+        </div>
+      </div>
       <div css={horizontalLine}></div>
-      <p>{content}</p>
+      <p css={listCardStyle.content}>{content}</p>
     </div>
   );
 };
@@ -45,7 +52,7 @@ const ListCard = ({ data }: ListCardProps) => {
   return (
     <ul css={listCardStyle.self}>
       {data.map((item, index) => (
-        <li key={index}>
+        <li key={index} css={listCardStyle.item}>
           <Card {...item} />
         </li>
       ))}
