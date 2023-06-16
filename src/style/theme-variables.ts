@@ -21,6 +21,7 @@ export const themeLight = css`
     );
     --background-header: rgba(236, 240, 243, 0.9);
     --background-linear: linear-gradient(145deg, #e2e8ec, #f6f2f6);
+    --background-card: linear-gradient(145deg, #6a67ce, #fc636b);
 
     --text-primary: #3c3e41;
     --text-secondary: #000000;
@@ -47,6 +48,7 @@ export const themeDark = css`
     );
     --background-header: rgba(33, 36, 40, 0.9);
     --background-linear: linear-gradient(145deg, #1e2024, #23272b);
+    --background-card: linear-gradient(145deg, #2c3333, #1f1d36);
 
     --text-primary: #c6cfdd;
     --text-secondary: #ffffff;

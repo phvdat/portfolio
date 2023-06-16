@@ -77,7 +77,14 @@ const Resume = () => {
       </ul>
 
       <div css={resumeStyle.container}>
-        <ListCard data={EDUCATION_LIST} />
+        <div>
+          <h2 css={resumeStyle.subTitle}>Education Quality</h2>
+          <ListCard data={EDUCATION_LIST} />
+        </div>
+        <div>
+          <h2 css={resumeStyle.subTitle}>Education Quality</h2>
+          <ListCard data={EDUCATION_LIST} />
+        </div>
       </div>
     </div>
   );
