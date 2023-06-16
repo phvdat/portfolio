@@ -1,56 +1,82 @@
 /** @jsxImportSource @emotion/react */
 
-import { IMAGES } from "constants/image";
-import { homePageStyle } from "./indexStyle";
-import { useEffect, useState, useRef } from "react";
+import { IMAGES } from 'constants/image';
+import { homeStyle } from './indexStyle';
+import { useState } from 'react';
+import { FindWithMe } from 'components/Sidebar/Sidebar';
+import { sidebarStyle } from 'components/Sidebar/SidebarStyle';
+import { squareButtonStyle } from 'style/common';
+import { AiFillHtml5 } from 'react-icons/ai';
+import { IoLogoCss3, IoLogoJavascript } from 'react-icons/io';
+import { FaReact } from 'react-icons/fa';
+const TEXT_DEFINE = ['Frontend Developer.', 'Professional Coder.'];
 
-const HomePage = () => {
+const Home = () => {
   const [textIndex, setTextIndex] = useState<number>(1);
-  const refText = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    const changeTextInterval = setInterval(() => {
-      if (textIndex < 3) {
-        setTextIndex((prev) => prev + 1);
-      } else {
-        setTextIndex(1);
-      }
-    }, 2000);
-    if (refText.current) {
-      refText.current.style.height = "0px";
+
+  const handleChangeText = () => {
+    const length = TEXT_DEFINE.length;
+    if (textIndex < length - 1) {
+      setTextIndex((prev) => prev + 1);
+    } else {
+      setTextIndex(0);
     }
-    return () => {
-      clearInterval(changeTextInterval);
-    };
-  }, [textIndex]);
+  };
 
   return (
     <>
-      <div css={homePageStyle.self}>
-        <div css={homePageStyle.information}>
-          <span css={homePageStyle.title}>WELCOME TO MY WORLD</span>
-          <h1 css={homePageStyle.description}>
+      <div css={homeStyle.self}>
+        <div css={homeStyle.information}>
+          <span css={homeStyle.title}>WELCOME TO MY WORLD</span>
+          <h1 css={homeStyle.introduce}>
             Hi, I'm <span>Pham Van Dat</span>
             <br />
             <span>a&nbsp;</span>
-            <div ref={refText}>
-              <span css={homePageStyle.subText} aria-hidden={textIndex !== 1}>
-                Frontend Developer
-              </span>
-              <span css={homePageStyle.subText} aria-hidden={textIndex !== 2}>
-                Professional Coder
-              </span>
-              <span css={homePageStyle.subText} aria-hidden={textIndex !== 3}>
-                Vietnamese
-              </span>
-            </div>
+            <span
+              css={homeStyle.subText}
+              onAnimationIteration={handleChangeText}
+            >
+              {TEXT_DEFINE[textIndex]}&nbsp;
+            </span>
           </h1>
+          <p css={homeStyle.description}>
+            I use animation as a third dimension by which to simplify
+            experiences and kuiding thro each and every interaction. I'm not
+            adding motion just to spruce things up, but doing it in ways that.
+          </p>
+          <div css={homeStyle.socialAndSkill}>
+            <div>
+              <FindWithMe />
+            </div>
+            <div css={sidebarStyle.findWithMe}>
+              <span>BEST SKILL ON</span>
+              <ul css={sidebarStyle.socialList}>
+                <li css={squareButtonStyle}>
+                  <AiFillHtml5 />
+                </li>
+                <li css={squareButtonStyle}>
+                  <IoLogoCss3 />
+                </li>
+                <li css={squareButtonStyle}>
+                  <IoLogoJavascript />
+                </li>
+                <li css={squareButtonStyle}>
+                  <FaReact />
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <div css={homePageStyle.picture}>
-          <img src={IMAGES.PICTURE_PROFILE} alt="profile" />
+        <div css={homeStyle.picture}>
+          {/* <img src={IMAGES.PICTURE_PROFILE} alt="profile" /> */}
+          <img
+            src='https://a.cdn-hotels.com/gdcs/production154/d1245/0a3c326f-cedf-4cf9-ada2-71f7517d0a09.jpg'
+            alt='profile'
+          />
         </div>
       </div>
     </>
   );
 };
 
-export default HomePage;
+export default Home;

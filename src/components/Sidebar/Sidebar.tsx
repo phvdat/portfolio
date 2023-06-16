@@ -1,24 +1,48 @@
 /** @jsxImportSource @emotion/react */
 
-import Avatar from "components/BaseUI/Avatar/Avatar";
-import { Link, NavLink } from "react-router-dom";
-import { ICON_SIZE, MENU, NAME } from "constants/common";
-import { sidebarStyle } from "./SidebarStyle";
-import { useEffect, useRef } from "react";
+import Avatar from 'components/BaseUI/Avatar/Avatar';
+import { Link, NavLink } from 'react-router-dom';
+import { ICON_SIZE, MENU, NAME } from 'constants/common';
+import { sidebarStyle } from './SidebarStyle';
+import { useEffect, useRef } from 'react';
 import {
   circleButtonStyle,
   horizontalLine,
-  squareButtonStyle,
-} from "style/common";
-import { IoMdClose } from "react-icons/io";
-import { FiFacebook } from "react-icons/fi";
-import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
-import { IMAGES } from "constants/image";
+  squareButtonStyle
+} from 'style/common';
+import { IoMdClose } from 'react-icons/io';
+import { FiFacebook } from 'react-icons/fi';
+import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
+import { IMAGES } from 'constants/image';
 
 interface SidebarProps {
   showSidebar: boolean;
   setShowSidebar: (visible: boolean) => void;
 }
+export const FindWithMe = () => {
+  return (
+    <div css={sidebarStyle.findWithMe}>
+      <span>FIND WITH ME</span>
+      <ul css={sidebarStyle.socialList}>
+        <li css={squareButtonStyle}>
+          <Link to={'/'}>
+            <FiFacebook />
+          </Link>
+        </li>
+        <li css={squareButtonStyle}>
+          <Link to={'/'}>
+            <AiFillGithub />
+          </Link>
+        </li>
+        <li css={squareButtonStyle}>
+          <Link to={'/'}>
+            <AiFillLinkedin />
+          </Link>
+        </li>
+      </ul>
+    </div>
+  );
+};
 
 const Sidebar = ({ showSidebar, setShowSidebar }: SidebarProps) => {
   const sidebarRef = useRef<HTMLDivElement>(null);
@@ -33,9 +57,9 @@ const Sidebar = ({ showSidebar, setShowSidebar }: SidebarProps) => {
   };
 
   useEffect(() => {
-    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener('mousedown', handleClickOutside);
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
 
@@ -66,24 +90,7 @@ const Sidebar = ({ showSidebar, setShowSidebar }: SidebarProps) => {
         </ul>
         <div css={horizontalLine}></div>
         <div css={sidebarStyle.footer}>
-          <span>FIND WITH ME</span>
-          <ul css={sidebarStyle.socialList}>
-            <li css={squareButtonStyle}>
-              <Link to={"/"}>
-                <FiFacebook />
-              </Link>
-            </li>
-            <li css={squareButtonStyle}>
-              <Link to={"/"}>
-                <AiFillGithub />
-              </Link>
-            </li>
-            <li css={squareButtonStyle}>
-              <Link to={"/"}>
-                <AiFillLinkedin />
-              </Link>
-            </li>
-          </ul>
+          <FindWithMe />
         </div>
       </div>
     </div>
