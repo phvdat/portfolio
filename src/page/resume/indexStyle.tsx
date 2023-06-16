@@ -44,7 +44,19 @@ export const resumeStyle = {
         flexDirection: 'column'
       })
     }),
-  container: css({})
+  container: ({ spacing }: Theme) =>
+    css({
+      marginTop: spacing?.[8],
+      display: 'flex',
+      gap: spacing?.[7],
+      [media('md')]: css({
+        flexDirection: 'column'
+      })
+    }),
+  subTitle: ({ spacing }: Theme) =>
+    css({
+      marginBottom: spacing?.[10]
+    })
 };
 
 export const listCardStyle = {
@@ -66,6 +78,8 @@ export const listCardStyle = {
       padding: spacing?.[7],
       boxShadow: 'var(--box-shadow-lg)',
       position: 'relative',
+      borderRadius: borderRadius?.sm,
+      opacity: 0.8,
       '::before': {
         content: '""',
         height: '6px',
@@ -76,6 +90,7 @@ export const listCardStyle = {
         left: `-${spacing?.[8]}`
       },
       '::after': {
+        transition: 'all 0.4s',
         content: '""',
         height: '10px',
         width: '10px',
@@ -84,20 +99,27 @@ export const listCardStyle = {
         boxShadow: '0 0 0 4px var(--background-tertiary)',
         backgroundColor: 'var(--background-primary)',
         top: '22px',
-        left: `-40px`,
-        ':hover': {
+        left: `-40px`
+      },
+      '&:hover': {
+        opacity: 1,
+        backgroundImage: 'var(--background-card)',
+        '::after': {
           backgroundColor: colors?.red?.[100]
         }
       }
     }),
 
   header: css({
-    display: 'flex'
+    display: 'flex',
+    justifyContent: 'space-between'
   }),
 
   score: ({ spacing, colors, fontSize }: Theme) =>
     css({
+      height: spacing?.[6],
       padding: spacing?.[5],
+      boxShadow: 'var(--box-shadow-md)',
       '> span': {
         color: colors?.red?.[100],
         fontSize: fontSize?.xs

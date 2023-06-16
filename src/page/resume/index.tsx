@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { listCardStyle, resumeStyle } from './indexStyle';
-import { horizontalLine } from 'style/common';
+import { horizontalLine, squareButtonStyle } from 'style/common';
 import { EDUCATION_LIST, EducationType } from 'constants/resume';
 
 interface ListCardProps {
@@ -38,7 +38,7 @@ const Card = (props: EducationType) => {
           <h2 css={listCardStyle.titleCard}>{title}</h2>
           <span css={listCardStyle.subTitle}>{subTitle}</span>
         </div>
-        <div css={listCardStyle.score}>
+        <div css={[squareButtonStyle, listCardStyle.score]}>
           <span>{score}</span>
         </div>
       </div>
@@ -77,7 +77,14 @@ const Resume = () => {
       </ul>
 
       <div css={resumeStyle.container}>
-        <ListCard data={EDUCATION_LIST} />
+        <div>
+          <h2 css={resumeStyle.subTitle}>Education Quality</h2>
+          <ListCard data={EDUCATION_LIST} />
+        </div>
+        <div>
+          <h2 css={resumeStyle.subTitle}>Education Quality</h2>
+          <ListCard data={EDUCATION_LIST} />
+        </div>
       </div>
     </div>
   );

@@ -6,6 +6,7 @@ import Features from './features';
 import { useCallback } from 'react';
 import aos from 'aos';
 import Resume from './resume';
+import Contact from './contact';
 
 const IndexPage = () => {
   useCallback(() => {
@@ -22,6 +23,9 @@ const IndexPage = () => {
       </section>
       <section>
         <Resume />
+      </section>
+      <section>
+        <Contact />
       </section>
     </>
   );
