@@ -2,6 +2,8 @@
 
 import { IMAGES } from 'constants/image';
 import { contactStyle } from './indexStyle';
+import { EMAIL } from 'constants/common';
+import { FindWithMe } from 'components/Sidebar/Sidebar';
 
 const Contact = () => {
   return (
@@ -20,6 +22,10 @@ const Contact = () => {
             I am available for freelance work. Connect with me via and call in
             to my account.
           </p>
+          <span css={contactStyle.email}>
+            Email: <a href={`mailto:{EMAIL}`}>{EMAIL}</a>
+          </span>
+          <FindWithMe />
         </div>
         <div css={contactStyle.right}></div>
       </div>

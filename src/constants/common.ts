@@ -1,4 +1,4 @@
-import { RoutePath } from "./routes";
+import { RoutePath } from './routes';
 interface IMenu {
   label: string;
   url: string;
@@ -6,30 +6,31 @@ interface IMenu {
 
 export const ICON_SIZE = {
   sm: 24,
-  md: 32,
+  md: 32
 };
 
 export const MENU: IMenu[] = [
   {
-    label: "HOME",
-    url: RoutePath.Home,
+    label: 'HOME',
+    url: RoutePath.Home
   },
   {
-    label: "FEATURES",
-    url: RoutePath.Features,
+    label: 'FEATURES',
+    url: RoutePath.Features
   },
   {
-    label: "RESUME",
-    url: RoutePath.Resume,
+    label: 'RESUME',
+    url: RoutePath.Resume
   },
   {
-    label: "BLOG",
-    url: RoutePath.Blog,
+    label: 'BLOG',
+    url: RoutePath.Blog
   },
   {
-    label: "CONTACTS",
-    url: RoutePath.Contact,
-  },
+    label: 'CONTACTS',
+    url: RoutePath.Contact
+  }
 ];
 
-export const NAME: string = "Pham Van Dat";
+export const NAME = 'Pham Van Dat';
+export const EMAIL = 'Phamvandat.hcmut@gmail.com';

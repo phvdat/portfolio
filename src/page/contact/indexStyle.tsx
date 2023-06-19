@@ -1,6 +1,17 @@
-import { Theme, css } from '@emotion/react';
+import { Theme, css, keyframes } from '@emotion/react';
 
 const LEFT_CONTENT_WIDTH = '430px';
+
+const decorationAnimation = keyframes`
+	from: {
+		width: 0%;
+		background: red;
+	}
+	to: {
+		width: 100%;
+		background: green;
+	}
+`;
 
 export const contactStyle = {
   self: ({ spacing }: Theme) =>
@@ -50,6 +61,28 @@ export const contactStyle = {
       fontSize: fontSize?.sm,
       fontWeight: fontWeight?.primary,
       marginTop: spacing?.[6]
+    }),
+
+  email: ({ fontWeight, fontSize, spacing, colors }: Theme) =>
+    css({
+      fontSize: fontSize?.sm,
+      fontWeight: fontWeight?.primary,
+      marginTop: spacing?.[6],
+      marginBottom: spacing?.[6],
+      '> a': {
+        color: colors?.red?.[100],
+        ':after': {
+          display: 'block',
+          content: "''",
+          height: '1px',
+          width: '100%',
+          backgroundColor: colors?.red?.[100],
+          '&:hover': {
+            backgroundColor: 'green',
+            animation: `${decorationAnimation} 1s ease-out infinite`
+          }
+        }
+      }
     }),
 
   right: ({ fontWeight, fontSize, spacing }: Theme) =>
