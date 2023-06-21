@@ -56,7 +56,7 @@ export const themeDark = css`
 
     --box-shadow-header: 10px 10px 19px #1c1e22, -10px -10px 19px #262a2e;
     --box-shadow-md: 0px 0px 18px rgba(136, 140, 143, 0.3);
-    --box-shadow-lg: 10px 10px 19px #1c1e22, -10px -10px 19px #262a2e;
+    --box-shadow-lg: 10px 10px 10px #1c1e22, -10px -10px 10px #262a2e;
 
     --border-color: #2e3337;
     --horizontal: #303235;
@@ -78,7 +78,8 @@ export const theme = {
       100: '#171717'
     },
     gray: {
-      100: '#646669'
+      100: '#646669',
+      200: '#E7E7E7'
     }
   },
   spacing: {

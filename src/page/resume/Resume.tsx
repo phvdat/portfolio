@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 
 import { useState } from 'react';
-import { listCardStyle, resumeStyle } from './indexStyle';
+import { listCardStyle, resumeStyle } from './ResumeStyle';
 import { horizontalLine, squareButtonStyle } from 'style/common';
 import { EDUCATION_LIST, EducationType } from 'constants/resume';
 

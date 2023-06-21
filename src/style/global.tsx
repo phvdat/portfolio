@@ -1,5 +1,5 @@
-import { css, Global } from "@emotion/react";
-import { root, themeDark, themeLight } from "./theme-variables";
+import { css, Global } from '@emotion/react';
+import { root, themeDark, themeLight } from './theme-variables';
 
 const reset = css`
   * {
@@ -24,7 +24,7 @@ const reset = css`
     box-sizing: border-box;
     background-color: var(--background-primary);
     color: var(--text-primary);
-    transaction: "all 1s ease-out";
+    transaction: 'all 1s ease-out';
     touch-action: manipulation;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -72,6 +72,36 @@ const resetTag = css`
   h6 {
     color: var(--text-primary);
     padding: 0;
+  }
+  textarea {
+    resize: none;
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--background-tertiary);
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 4px;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  /* Firefox */
+  input[type='number'] {
+    -moz-appearance: textfield;
   }
 `;
 

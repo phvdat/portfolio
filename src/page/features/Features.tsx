@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import { featureStyle } from './indexStyle';
+import { featureStyle } from './FeaturesStyle';
 
 const Feature = () => {
   return (

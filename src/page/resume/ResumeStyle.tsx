@@ -80,6 +80,7 @@ export const listCardStyle = {
       position: 'relative',
       borderRadius: borderRadius?.sm,
       opacity: 0.8,
+      transition: 'background-image 0.9s ease',
       '::before': {
         content: '""',
         height: '6px',

@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 
 import { IMAGES } from 'constants/image';
-import { homeStyle } from './indexStyle';
+import { homeStyle } from './HomeStyle';
 import { useState } from 'react';
 import { FindWithMe } from 'components/Sidebar/Sidebar';
 import { sidebarStyle } from 'components/Sidebar/SidebarStyle';
@@ -9,6 +9,7 @@ import { squareButtonStyle } from 'style/common';
 import { AiFillHtml5 } from 'react-icons/ai';
 import { IoLogoCss3, IoLogoJavascript } from 'react-icons/io';
 import { FaReact } from 'react-icons/fa';
+import { NAME } from 'constants/common';
 const TEXT_DEFINE = ['Frontend Developer.', 'Professional Coder.'];
 
 const Home = () => {
@@ -29,7 +30,7 @@ const Home = () => {
         <div css={homeStyle.information}>
           <span css={homeStyle.title}>WELCOME TO MY WORLD</span>
           <h1 css={homeStyle.introduce}>
-            Hi, I'm <span>Pham Van Dat</span>
+            Hi, I'm <span>{NAME}</span>
             <br />
             <span>a&nbsp;</span>
             <span
