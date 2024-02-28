@@ -1,18 +1,22 @@
-import { Theme, css } from '@emotion/react';
+import { Theme, css, keyframes } from '@emotion/react';
 import { media } from 'style/responsive-helper';
+
+const backgroundIMG = keyframes`
+100% { background-image: var(--background-card); }
+`;
 
 export const resumeStyle = {
   self: ({ spacing }: Theme) =>
     css({
       paddingTop: spacing?.[7],
-      paddingBottom: spacing?.[8]
+      paddingBottom: spacing?.[8],
     }),
   title: ({ fontWeight, fontSize, spacing }: Theme) =>
     css({
       fontSize: fontSize?.xxxl,
       fontWeight: fontWeight?.tertiary,
       textAlign: 'center',
-      marginBottom: spacing?.[11]
+      marginBottom: spacing?.[11],
     }),
   tab: ({ borderRadius, spacing, colors }: Theme) =>
     css({
@@ -28,21 +32,21 @@ export const resumeStyle = {
         cursor: 'pointer',
         [media('md')]: css({
           paddingTop: spacing?.[7],
-          paddingBottom: spacing?.[7]
+          paddingBottom: spacing?.[7],
         }),
         '&[data-active-tab="true"]': {
           borderRadius: borderRadius?.md,
           boxShadow: 'var(--box-shadow-lg)',
-          color: colors?.red?.[100]
+          color: colors?.red?.[100],
         },
         ':hover': {
           borderRadius: borderRadius?.md,
-          boxShadow: 'var(--box-shadow-lg)'
-        }
+          boxShadow: 'var(--box-shadow-lg)',
+        },
       },
       [media('md')]: css({
-        flexDirection: 'column'
-      })
+        flexDirection: 'column',
+      }),
     }),
   container: ({ spacing }: Theme) =>
     css({
@@ -50,13 +54,13 @@ export const resumeStyle = {
       display: 'flex',
       gap: spacing?.[7],
       [media('md')]: css({
-        flexDirection: 'column'
-      })
+        flexDirection: 'column',
+      }),
     }),
   subTitle: ({ spacing }: Theme) =>
     css({
-      marginBottom: spacing?.[10]
-    })
+      marginBottom: spacing?.[10],
+    }),
 };
 
 export const listCardStyle = {
@@ -65,12 +69,29 @@ export const listCardStyle = {
       gap: spacing?.[7],
       borderLeft: '6px solid',
       borderColor: 'var(--background-tertiary)',
-      paddingLeft: spacing?.[8]
+      paddingLeft: spacing?.[8],
     }),
 
-  item: ({ spacing }: Theme) =>
+  item: ({ spacing, borderRadius }: Theme) =>
     css({
-      marginBottom: spacing?.[9]
+      marginBottom: spacing?.[9],
+      position: 'relative',
+      ':after': {
+        content: "''",
+        top: 0,
+        left: 0,
+        height: '100%',
+        width: '100%',
+        borderRadius: borderRadius?.sm,
+        backgroundImage: 'var(--background-card)',
+        position: 'absolute',
+        zIndex: -1,
+        opacity: 0,
+        transition: 'opacity 0.4s ease-in-out',
+      },
+      ':hover::after': {
+        opacity: 1,
+      },
     }),
 
   card: ({ spacing, borderRadius, colors }: Theme) =>
@@ -80,7 +101,6 @@ export const listCardStyle = {
       position: 'relative',
       borderRadius: borderRadius?.sm,
       opacity: 0.8,
-      transition: 'background-image 0.9s ease',
       '::before': {
         content: '""',
         height: '6px',
@@ -88,7 +108,7 @@ export const listCardStyle = {
         position: 'absolute',
         backgroundColor: 'var(--background-tertiary)',
         top: spacing?.[7],
-        left: `-${spacing?.[8]}`
+        left: `-${spacing?.[8]}`,
       },
       '::after': {
         transition: 'all 0.4s',
@@ -100,20 +120,19 @@ export const listCardStyle = {
         boxShadow: '0 0 0 4px var(--background-tertiary)',
         backgroundColor: 'var(--background-primary)',
         top: '22px',
-        left: `-40px`
+        left: `-40px`,
       },
       '&:hover': {
         opacity: 1,
-        backgroundImage: 'var(--background-card)',
         '::after': {
-          backgroundColor: colors?.red?.[100]
-        }
-      }
+          backgroundColor: colors?.red?.[100],
+        },
+      },
     }),
 
   header: css({
     display: 'flex',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
   }),
 
   score: ({ spacing, colors, fontSize }: Theme) =>
@@ -123,14 +142,14 @@ export const listCardStyle = {
       boxShadow: 'var(--box-shadow-md)',
       '> span': {
         color: colors?.red?.[100],
-        fontSize: fontSize?.xs
-      }
+        fontSize: fontSize?.xs,
+      },
     }),
 
   titleCard: ({ fontSize, fontWeight }: Theme) =>
     css({
       fontSize: fontSize?.lg,
-      fontWeight: fontWeight?.secondary
+      fontWeight: fontWeight?.secondary,
     }),
 
   subTitle: ({ fontSize, fontWeight, spacing }: Theme) =>
@@ -138,13 +157,13 @@ export const listCardStyle = {
       marginTop: spacing?.[6],
       marginBottom: spacing?.[7],
       fontSize: fontSize?.xs,
-      fontWeight: fontWeight?.default
+      fontWeight: fontWeight?.default,
     }),
   content: ({ fontSize, fontWeight, spacing }: Theme) =>
     css({
       marginTop: spacing?.[6],
       marginBottom: spacing?.[7],
       fontSize: fontSize?.xs,
-      fontWeight: fontWeight?.default
-    })
+      fontWeight: fontWeight?.default,
+    }),
 };

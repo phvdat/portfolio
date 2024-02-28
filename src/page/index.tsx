@@ -3,7 +3,7 @@
 import { circleButtonStyle, horizontalLine } from 'style/common';
 import Home from './home/Home';
 import Features from './features/Features';
-import { useCallback } from 'react';
+import { useEffect } from 'react';
 import aos from 'aos';
 import Resume from './resume/Resume';
 import Contact from './contact/Contact';
@@ -11,13 +11,16 @@ import { AiOutlineArrowUp } from 'react-icons/ai';
 import { indexStyle } from './indexStyle';
 
 const IndexPage = () => {
-  useCallback(() => {
-    aos.init();
+  useEffect(() => {
+    aos.init({
+      duration: 800,
+    });
+    aos.refresh();
   }, []);
   const handleBackToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
+      behavior: 'smooth',
     });
   };
 

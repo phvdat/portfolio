@@ -3,10 +3,10 @@
 import { IMAGES } from 'constants/image';
 import { contactStyle } from './ContactStyle';
 import { EMAIL } from 'constants/common';
-import { FindWithMe } from 'components/Sidebar/Sidebar';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import { FindWithMe } from 'components/FindWithMe/FindWithMe';
 
 interface IFormValues {
   name: string;
@@ -24,16 +24,16 @@ const schema = yup.object().shape({
     .required('Email is a required field')
     .email('Email must be a valid email'),
   subject: yup.string(),
-  message: yup.string().required('Message is a required field')
+  message: yup.string().required('Message is a required field'),
 });
 
 const Contact = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors }
+    formState: { errors },
   } = useForm<IFormValues>({
-    resolver: yupResolver<IFormValues>(schema)
+    resolver: yupResolver<IFormValues>(schema),
   });
   const onSubmit = async (formValues: IFormValues) => {
     console.log(formValues);
@@ -69,7 +69,7 @@ const Contact = () => {
               <input
                 css={[
                   contactStyle.customInput,
-                  errors?.name ? contactStyle.inputError : null
+                  errors?.name ? contactStyle.inputError : null,
                 ]}
                 id='name'
                 type='text'
@@ -99,7 +99,7 @@ const Contact = () => {
             <input
               css={[
                 contactStyle.customInput,
-                errors?.email ? contactStyle.inputError : null
+                errors?.email ? contactStyle.inputError : null,
               ]}
               type='text'
               id='email'
@@ -130,7 +130,7 @@ const Contact = () => {
               rows={6}
               css={[
                 contactStyle.customInput,
-                errors?.email ? contactStyle.inputError : null
+                errors?.email ? contactStyle.inputError : null,
               ]}
               id='message'
               {...register('message')}

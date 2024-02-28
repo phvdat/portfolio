@@ -17,14 +17,14 @@ export const sidebarStyle = {
       transition: 'opacity 0.6s ease-out',
       '&[aria-expanded="true"]': {
         visibility: 'visible',
-        opacity: 1
-      }
+        opacity: 1,
+      },
     }),
 
   openSidebar: css({
     visibility: 'visible',
     opacity: 1,
-    transition: 'opacity 0.4s ease-out'
+    transition: 'opacity 0.4s ease-out',
   }),
 
   self: ({ spacing }: Theme) =>
@@ -36,17 +36,17 @@ export const sidebarStyle = {
       backgroundColor: 'var(--background-secondary)',
       transition: 'all 0.6s ease-out',
       [media('sm')]: {
-        width: SIDEBAR_WIDTH_MOBILE
+        width: SIDEBAR_WIDTH_MOBILE,
       },
       '&[aria-expanded="true"]': {
-        transform: 'translateX(0px)'
-      }
+        transform: 'translateX(0px)',
+      },
     }),
 
   avatarContainer: css({
     display: 'flex',
     justifyContent: 'space-between',
-    alignItems: 'center'
+    alignItems: 'center',
   }),
 
   description: ({ spacing, fontSize }: Theme) =>
@@ -54,7 +54,7 @@ export const sidebarStyle = {
       color: 'var(--text-tertiary)',
       marginTop: spacing?.[7],
       marginBottom: spacing?.[7],
-      fontSize: fontSize?.sm
+      fontSize: fontSize?.sm,
     }),
 
   menu: ({ spacing, fontSize, fontWeight }: Theme) =>
@@ -65,28 +65,12 @@ export const sidebarStyle = {
         fontSize: fontSize?.xs,
         fontWeight: fontWeight?.secondary,
         padding: `${spacing?.[4]} 0`,
-        width: '100%'
-      }
+        width: '100%',
+      },
     }),
 
   footer: ({ spacing }: Theme) =>
     css({
-      marginTop: spacing?.[7]
+      marginTop: spacing?.[7],
     }),
-
-  findWithMe: ({ fontSize, fontWeight, spacing }: Theme) =>
-    css({
-      '> span': {
-        fontSize: fontSize?.xs,
-        fontWeight: fontWeight?.secondary,
-        marginBottom: spacing?.[7]
-      }
-    }),
-
-  socialList: ({ spacing }: Theme) =>
-    css({
-      display: 'flex',
-      gap: spacing?.[7],
-      flexWrap: 'wrap'
-    })
 };

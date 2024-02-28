@@ -12,21 +12,21 @@ interface ListCardProps {
 enum Tab {
   Education = 1,
   ProfessionalSkills = 2,
-  Experience = 3
+  Experience = 3,
 }
 const tab = [
   {
     label: 'Education',
-    value: Tab.Education
+    value: Tab.Education,
   },
   {
     label: 'Professional Skills',
-    value: Tab.ProfessionalSkills
+    value: Tab.ProfessionalSkills,
   },
   {
     label: 'Experience',
-    value: Tab.Experience
-  }
+    value: Tab.Experience,
+  },
 ];
 
 const Card = (props: EducationType) => {
@@ -52,7 +52,7 @@ const ListCard = ({ data }: ListCardProps) => {
   return (
     <ul css={listCardStyle.self}>
       {data.map((item, index) => (
-        <li key={index} css={listCardStyle.item}>
+        <li key={index} css={listCardStyle.item} data-aos='fade-left'>
           <Card {...item} />
         </li>
       ))}
@@ -63,8 +63,10 @@ const Resume = () => {
   const [activeTab, setActiveTab] = useState<Tab>(Tab.Education);
   return (
     <div css={resumeStyle.self}>
-      <h1 css={resumeStyle.title}>My Resume</h1>
-      <ul css={resumeStyle.tab}>
+      <h1 css={resumeStyle.title} data-aos='fade-up'>
+        My Resume
+      </h1>
+      <ul css={resumeStyle.tab} data-aos='fade-up'>
         {tab.map((item, index) => (
           <li
             data-active-tab={activeTab === item.value}
